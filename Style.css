@@ -1,0 +1,115 @@
+body {margin:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+
+}
+
+#cartProducts {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+}
+
+.product {
+    width: 200px;
+    height: 40vh;
+    position: relative;
+    color: rgb(90, 4, 4);
+    margin-left: 50px;
+}
+
+.but {
+    color: green;
+    margin-left: 50px;
+}
+
+.price {
+    margin-left: 50px;
+    background-color: greenyellow;
+}
+
+
+#main_Container {
+  width: 1000px;
+  padding: 20px;
+  margin-top:30px;
+  background-color:rgb(192, 214, 210);
+}
+
+#totalPrice {
+  color: red;
+  background-color: yellow;
+  font-weight: 900;
+}
+
+#container {
+  width: 1000px;
+    padding: 20px;
+    margin-top:30px;
+    background-color:rgb(192, 214, 210);
+}
+
+#cartPage {
+  width: 1000px;
+  padding: 20px;
+  margin-top:30px;
+  background-color:rgb(192, 214, 210);
+}
+
+
+.it {
+    font-style: italic;
+    width: 50vw;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+.header {
+    color: green;
+    width: 1040px;
+}
+
+#list {
+  background-color: rgb(108, 161, 192);
+  font-size: large;
+  height: 50px;
+  width: 1040px;
+}
+
+.nb {
+  height: 50px;
+  width: 150px;
+  background-color: white;
+  color: green;
+  font-weight: 800;
+}
