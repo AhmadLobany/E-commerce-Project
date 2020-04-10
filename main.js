@@ -4,9 +4,14 @@ const Store= function() {
     var productsCounter = 0
     var productsCart = 0
     var TotalPrice = 0 
+    var ProductsInCart = 0
 
     const getPrice = function () {
         return TotalPrice
+    }
+
+    const getNUmInCart = function () {
+        return ProductsInCart
     }
 
 
@@ -67,6 +72,9 @@ const Store= function() {
             const totalPrice = document.getElementById('totalPrice')
             totalPrice.innerHTML = "Total price of the purchase:" + store.getPrice() + " NIS"
             _cart.slice(index,1)
+            ProductsInCart--
+            const counter = document.getElementById('counter')
+            counter.innerHTML = ProductsInCart
         }
     }
 
@@ -106,14 +114,26 @@ const Store= function() {
                 const totalPrice = document.getElementById('totalPrice')
                 totalPrice.innerHTML = "Total price of the purchase:" + store.getPrice() + " NIS"
                 _cart.push({product: product,cartId: 'c'+ productsCart})
+                ProductsInCart++
+                const counter = document.getElementById('counter')
+                counter.innerHTML = ProductsInCart
             }
         }
     }
 
 
 
-    return {addItem,addToCart,getPrice,deleteFromCart}
+    return {addItem,addToCart,getPrice,deleteFromCart,getNUmInCart}
 }
+
+let cartBut = document.getElementById('cart')
+cartBut.style.position='relative'
+const counter = document.createElement('h')
+counter.setAttribute('id','counter')
+counter.style.backgroundColor = 'Red'
+counter.style.color = 'white'
+counter.innerHTML = 0
+cartBut.appendChild(counter)
 
 
 const store = Store()
@@ -138,7 +158,7 @@ AboutBut.setAttribute('onclick','activateAbout()')
 const mainBut = document.getElementById('mainBut')
 mainBut.setAttribute('onclick','activateProducts()')
 
-const cartBut = document.getElementById('cart')
+cartBut = document.getElementById('cart')
 cartBut.setAttribute('onclick','activateCart()')
 
 
@@ -178,6 +198,15 @@ store.addItem('Blueberries 100gr',20,'https://cdn.pixabay.com/photo/2016/04/13/0
 store.addItem('Strawberries 100gr',15,'https://cdn.pixabay.com/photo/2018/04/29/11/54/strawberries-3359755_960_720.jpg')
 store.addItem('Broccoli',5,'https://cdn.pixabay.com/photo/2017/01/12/13/52/broccoli-1974764_960_720.jpg')
 store.addItem('Lemon 100gr',2,'https://cdn.pixabay.com/photo/2017/02/05/12/31/lemons-2039830_960_720.jpg')
+
+
+
+
+
+
+
+
+
 
 
 
